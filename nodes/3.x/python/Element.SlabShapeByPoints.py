@@ -12,27 +12,33 @@ from RevitServices.Persistence import DocumentManager
 from RevitServices.Transactions import TransactionManager
 
 def AddPointToSlabShape(item, point):
-	if hasattr(item, "SlabShapeEditor"): sle = item.SlabShapeEditor
-	elif hasattr(item, "GetSlabShapeEditor"): sle = item.GetSlabShapeEditor()
-	else: return False
-	try:
-		sle.DrawPoint(point.ToXyz())
-		return True
-	except: return False
+    if hasattr(item, "SlabShapeEditor"): sle = item.SlabShapeEditor
+    elif hasattr(item, "GetSlabShapeEditor"): sle = item.GetSlabShapeEditor()
+    else: return False
+    sle.Enable()
+    doc.Regenerate()
+    p = point.ToXyz()
+    try:
+        if version > 2024: vertex = sle.AddPoint(p)
+        else: vertex = sle.DrawPoint(p)
+        if vertex.Position.IsAlmostEqualTo(p): return True
+        else: return False
+    except: return False
 
 doc = DocumentManager.Instance.CurrentDBDocument
 items = UnwrapElement(IN[1])
+version = IN[2]
 
 TransactionManager.Instance.EnsureInTransaction(doc)
 if isinstance(IN[1], list):
-	if isinstance(IN[0], list):
-		OUT = []
-		for item, points in zip(items, IN[0]):
-			if isinstance(points, list): OUT.append((item, [AddPointToSlabShape(item, x) for x in points]))
-			else: OUT.append((item, AddPointToSlabShape(item, points)))
-	else: OUT = [(x, AddPointToSlabShape(x, IN[0])) for x in items]
-	OUT = map(list, zip(*OUT))
+    if isinstance(IN[0], list):
+        OUT = []
+        for item, points in zip(items, IN[0]):
+            if isinstance(points, list): OUT.append((item, [AddPointToSlabShape(item, x) for x in points]))
+            else: OUT.append((item, AddPointToSlabShape(item, points)))
+    else: OUT = [(x, AddPointToSlabShape(x, IN[0])) for x in items]
+    OUT = map(list, zip(*OUT))
 else:
-	if isinstance(IN[0], list): OUT = items, [AddPointToSlabShape(items, x) for x in IN[0]]
-	else: OUT = items, AddPointToSlabShape(items, IN[0])
+    if isinstance(IN[0], list): OUT = items, [AddPointToSlabShape(items, x) for x in IN[0]]
+    else: OUT = items, AddPointToSlabShape(items, IN[0])
 TransactionManager.Instance.TransactionTaskDone()
