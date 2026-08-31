@@ -34,7 +34,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+      "Description": "Ein Funktionsparameter zur Verwendung mit benutzerdefinierten Blöcken.\r\n\r\nSie können den Typ und den Vorgabewert für den Parameter angeben, z. B.\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
@@ -55,11 +55,11 @@
       ],
       "Outputs": [],
       "Replication": "Disabled",
-      "Description": "A function output, use with custom nodes"
+      "Description": "Eine Funktionsausgabe zur Verwendung mit benutzerdefinierten Blöcken"
     },
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
-      "Code": "import clr\r\nimport System.IO\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\ndef GetName(item):\r\n    unwrapped = UnwrapElement(item)\r\n    try: utype = unwrapped.GetType().ToString()\r\n    except: utype = \"\"\r\n    if not unwrapped: return None\r\n    elif utype in (\"Autodesk.Revit.DB.Area\", \"Autodesk.Revit.DB.Architecture.TopographySurface\"):\r\n        try: return unwrapped.get_Parameter(BuiltInParameter.ROOM_NAME).AsString()\r\n        except: return item.Name\r\n    elif utype in (\"Autodesk.Revit.DB.BuiltInParameter\", \"Autodesk.Revit.DB.BuiltInParameterGroup\", \"Autodesk.Revit.DB.DisplayUnitType\", \"Autodesk.Revit.DB.ParameterType\", \"Autodesk.Revit.DB.UnitSymbolType\", \"Autodesk.Revit.DB.UnitType\"): \r\n        try: return LabelUtils.GetLabelFor(unwrapped)\r\n        except: return unwrapped.ToString()\r\n    elif utype in (\"Autodesk.Revit.DB.Parameter\", \"Autodesk.Revit.DB.FamilyParameter\"): return unwrapped.Definition.Name\r\n    elif utype == \"Revit.Application.Document\": \r\n        if unwrapped.FilePath: return System.IO.Path.GetFileName(unwrapped.FilePath)\r\n        else: return None\r\n    elif unwrapped.GetType().ToString() == \"Autodesk.Revit.DB.Document\": \r\n        if unwrapped.PathName: return System.IO.Path.GetFileName(unwrapped.PathName)\r\n        else: return None\r\n    elif utype == (\"Autodesk.Revit.DB.ForgeTypeId\"): \r\n        try: return LabelUtils.GetLabelForSpec(unwrapped)\r\n        except: \r\n            try: return LabelUtils.GetLabelForSymbol(unwrapped)\r\n            except: \r\n                try: return LabelUtils.GetLabelForUnit(unwrapped)\r\n                except: \r\n                    try: return LabelUtils.GetLabelForGroup(unwrapped)\r\n                    except: \r\n                        try: return LabelUtils.GetLabelForBuiltinParameter(unwrapped)\r\n                        except: \r\n                            try: return LabelUtils.GetLabelForDiscipline(unwrapped)\r\n                            except: return unwrapped.TypeId            \r\n    elif hasattr(unwrapped, \"GetName\"): return unwrapped.GetName()  \r\n    elif hasattr(item, \"Name\"): return item.Name\r\n    elif hasattr(unwrapped, \"Name\"): return unwrapped.Name     \r\n    else: return None\r\n\r\nitems = IN[0]\r\nif isinstance(IN[0], list): OUT = [GetName(x) for x in IN[0]]\r\nelse: OUT = GetName(IN[0])",
+      "Code": "import clr\r\nimport System.IO\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\ndef GetName(item):\r\n    unwrapped = UnwrapElement(item)\r\n    try: utype = unwrapped.GetType().ToString()\r\n    except: utype = \"\"\r\n    if not unwrapped: return None\r\n    elif utype in (\"Autodesk.Revit.DB.Area\", \"Autodesk.Revit.DB.Architecture.TopographySurface\"):\r\n        try: return unwrapped.get_Parameter(BuiltInParameter.ROOM_NAME).AsString()\r\n        except: return item.Name\r\n    elif utype in (\"Autodesk.Revit.DB.BuiltInParameter\", \"Autodesk.Revit.DB.BuiltInParameterGroup\", \"Autodesk.Revit.DB.DisplayUnitType\", \"Autodesk.Revit.DB.ParameterType\", \"Autodesk.Revit.DB.UnitSymbolType\", \"Autodesk.Revit.DB.UnitType\"): \r\n        try: return LabelUtils.GetLabelFor(unwrapped)\r\n        except: return unwrapped.ToString()\r\n    elif utype in (\"Autodesk.Revit.DB.Parameter\", \"Autodesk.Revit.DB.FamilyParameter\"): return unwrapped.Definition.Name\r\n    elif utype == \"Revit.Application.Document\": \r\n        if unwrapped.FilePath: return System.IO.Path.GetFileName(unwrapped.FilePath)\r\n        else: return None\r\n    elif utype == \"Autodesk.Revit.DB.Document\": \r\n        if unwrapped.PathName: return System.IO.Path.GetFileName(unwrapped.PathName)\r\n        else: return None\r\n    elif utype == (\"Autodesk.Revit.DB.ForgeTypeId\"): \r\n        try: return LabelUtils.GetLabelForSpec(unwrapped)\r\n        except: \r\n            try: return LabelUtils.GetLabelForSymbol(unwrapped)\r\n            except: \r\n                try: return LabelUtils.GetLabelForUnit(unwrapped)\r\n                except: \r\n                    try: return LabelUtils.GetLabelForGroup(unwrapped)\r\n                    except: \r\n                        try: return LabelUtils.GetLabelForBuiltinParameter(unwrapped)\r\n                        except: \r\n                            try: return LabelUtils.GetLabelForDiscipline(unwrapped)\r\n                            except: return unwrapped.TypeId            \r\n    elif hasattr(unwrapped, \"GetName\"): return unwrapped.GetName()  \r\n    elif hasattr(item, \"Name\"): return item.Name\r\n    elif hasattr(unwrapped, \"Name\"): return unwrapped.Name     \r\n    else: return None\r\n\r\nitems = IN[0]\r\nif isinstance(IN[0], list): OUT = [GetName(x) for x in IN[0]]\r\nelse: OUT = GetName(IN[0])",
       "Engine": "CPython3",
       "VariableInputPorts": true,
       "Id": "fe1345c4af284ad48eee6a5bbea61e11",
@@ -87,7 +87,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Runs an embedded Python script."
+      "Description": "Führt ein eingebettetes Python-Skript aus."
     }
   ],
   "Connectors": [
@@ -113,12 +113,12 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": false,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "3.3.0.6316",
+      "Version": "3.6.2.11575",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "_Background Preview",
+      "Name": "_Hintergrundvorschau",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
