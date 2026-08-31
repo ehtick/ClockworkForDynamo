@@ -12,8 +12,9 @@
       "Name": "Directory Path",
       "Type": "string",
       "Type2": "string",
-      "Value": "C:\\Users\\adsk\\Documents\\andreas\\repos\\ClockworkForDynamo\\nodes\\3.x",
-      "Description": "Allows you to select a directory on the system and returns its path"
+      "Value": "U:\\repos\\ClockworkForDynamo\\nodes\\3.x",
+      "Description": "Ermöglicht die Auswahl eines Verzeichnisses auf dem System und gibt seinen Pfad zurück",
+      "SelectedIndex": 0
     },
     {
       "Id": "5b1ee07aa6994df8843efc46fa9d1c79",
@@ -21,7 +22,8 @@
       "Type": "boolean",
       "Type2": "boolean",
       "Value": "false",
-      "Description": "Enables selection between True and False"
+      "Description": "Ermöglicht die Auswahl zwischen True und False",
+      "SelectedIndex": 0
     },
     {
       "Id": "653011cc2149490ab0d33ebbf7e5828f",
@@ -29,7 +31,8 @@
       "Type": "string",
       "Type2": "string",
       "Value": "python",
-      "Description": "Creates a string"
+      "Description": "Erstellt eine Zeichenfolge.",
+      "SelectedIndex": 0
     },
     {
       "Id": "962c58ef8bb54bc6800bd8a2ad3390ef",
@@ -37,7 +40,8 @@
       "Type": "string",
       "Type2": "string",
       "Value": "&gt;",
-      "Description": "Creates a string"
+      "Description": "Erstellt eine Zeichenfolge.",
+      "SelectedIndex": 0
     },
     {
       "Id": "0abdb126358348b396738b41afcfccfd",
@@ -45,7 +49,8 @@
       "Type": "string",
       "Type2": "string",
       "Value": ">",
-      "Description": "Creates a string"
+      "Description": "Erstellt eine Zeichenfolge.",
+      "SelectedIndex": 0
     },
     {
       "Id": "b8a0e29d13204cd39f43374d22fa9bc3",
@@ -53,7 +58,8 @@
       "Type": "string",
       "Type2": "string",
       "Value": "<",
-      "Description": "Creates a string"
+      "Description": "Erstellt eine Zeichenfolge.",
+      "SelectedIndex": 0
     },
     {
       "Id": "298292f0a6894d1d8f7ceb72772d0cfa",
@@ -61,7 +67,8 @@
       "Type": "string",
       "Type2": "string",
       "Value": "&lt;",
-      "Description": "Creates a string"
+      "Description": "Erstellt eine Zeichenfolge.",
+      "SelectedIndex": 0
     },
     {
       "Id": "895120759a574a30867d276ad595b9a4",
@@ -69,7 +76,8 @@
       "Type": "string",
       "Type2": "string",
       "Value": "\r\n\r\n##### NEXT PYTHON NODE #####\r\n\r\n",
-      "Description": "Creates a string"
+      "Description": "Erstellt eine Zeichenfolge.",
+      "SelectedIndex": 0
     }
   ],
   "Outputs": [],
@@ -91,9 +99,9 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows you to select a directory on the system and returns its path",
+      "Description": "Ermöglicht die Auswahl eines Verzeichnisses auf dem System und gibt seinen Pfad zurück",
       "HintPath": "C:\\Users\\andreas\\Documents\\GitHub\\ClockworkForDynamo\\nodes\\1.x",
-      "InputValue": "C:\\Users\\adsk\\Documents\\andreas\\repos\\ClockworkForDynamo\\nodes\\3.x"
+      "InputValue": "U:\\repos\\ClockworkForDynamo\\nodes\\3.x"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -103,7 +111,7 @@
         {
           "Id": "530d87284cee44a9944b92148d72a400",
           "Name": "directory",
-          "Description": "Directory to get contents of\n\nvar",
+          "Description": "Verzeichnis zum Abrufen des Inhalts\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -112,7 +120,7 @@
         {
           "Id": "780a4003b27b4a67835bc0e0b14f57f1",
           "Name": "searchString",
-          "Description": "Search string used to filter results\n\nstring\nDefault value : \"*.*\"",
+          "Description": "Suchzeichenfolge zum Filtern von Ergebnissen\n\nstring\nVorgabewert : \"*.*\"",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -121,7 +129,7 @@
         {
           "Id": "a169a388b8d740f4b91cd61f2d0c7def",
           "Name": "includeSubdirectories",
-          "Description": "Set to true to include files and folders in subdirectories (recursive) or set to false to include results from top-level of given directory only.\n\nbool\nDefault value : false",
+          "Description": "Legen Sie diese Option auf True fest, um Dateien und Ordner in Unterverzeichnissen (rekursiv) einzubeziehen, oder legen Sie False fest, um Ergebnisse nur aus der obersten Ebene des angegebenen Verzeichnisses einzubeziehen.\n\nbool\nVorgabewert : false",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -132,7 +140,7 @@
         {
           "Id": "de933f10b7c745e49d6c615ee6d540b5",
           "Name": "files",
-          "Description": "Resulting files from query",
+          "Description": "Aus Abfrage resultierende Dateien",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -141,7 +149,7 @@
         {
           "Id": "252514cfb168478385dc2f83d27a56c2",
           "Name": "directories",
-          "Description": "Resulting directories from query",
+          "Description": "Aus Abfrage resultierende Verzeichnisse",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -150,7 +158,7 @@
       ],
       "FunctionSignature": "DSCore.IO.FileSystem.GetDirectoryContents@var,string,bool",
       "Replication": "Auto",
-      "Description": "Will return a list of files and directories that are contained within a given directory. An optional searchString can be used to filter the results.\n\nFileSystem.GetDirectoryContents (directory: var, searchString: string = \"*.*\", includeSubdirectories: bool = false): var[]..[]"
+      "Description": "Gibt eine Liste mit Dateien und Verzeichnissen zurück, die sich in einem bestimmten Verzeichnis befinden. Mit einer optionalen searchString können Sie die Ergebnisse filtern.\n\nFileSystem.GetDirectoryContents (directory: var, searchString: string = \"*.*\", includeSubdirectories: bool = false): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -161,7 +169,7 @@
         {
           "Id": "a6c6d356d8704e56abe69fb2b9e085d5",
           "Name": "",
-          "Description": "Value of expression at line 1",
+          "Description": "Wert des Ausdrucks in Zeile 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -169,7 +177,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code.",
       "Code": "\"*.dyf\";"
     },
     {
@@ -199,7 +207,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a directory object from the given path"
+      "Description": "Erstellt ein Verzeichnisobjekt aus dem angegebenen Pfad"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -209,7 +217,7 @@
         {
           "Id": "a9d00f096e5540bcacdb4d232e5b9322",
           "Name": "path",
-          "Description": "Path to get the file name of\n\nstring",
+          "Description": "Pfad, dessen Dateiname abgerufen werden soll\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -218,7 +226,7 @@
         {
           "Id": "6e6b87b531b8476ab6d0bed3d4bff95a",
           "Name": "withExtension",
-          "Description": "Toggle to include extension in result\n\nbool\nDefault value : true",
+          "Description": "Erweiterung im Ergebnis berücksichtigen ein/aus\n\nbool\nVorgabewert : true",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -229,7 +237,7 @@
         {
           "Id": "ddddca92742140098b81414ab2cfe35d",
           "Name": "string",
-          "Description": "File name from file path",
+          "Description": "Dateiname aus Dateipfad",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -238,7 +246,7 @@
       ],
       "FunctionSignature": "DSCore.IO.FileSystem.FileName@string,bool",
       "Replication": "Auto",
-      "Description": "Returns the file name of a file path.\n\nFileSystem.FileName (path: string, withExtension: bool = true): string"
+      "Description": "Gibt den Dateinamen eines Dateipfads zurück.\n\nFileSystem.FileName (path: string, withExtension: bool = true): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
@@ -257,7 +265,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Enables selection between True and False",
+      "Description": "Ermöglicht die Auswahl zwischen True und False",
       "InputValue": false
     },
     {
@@ -268,7 +276,7 @@
         {
           "Id": "a1fa34431858407f868ac33c9995839b",
           "Name": "filePath",
-          "Description": "Path to write to\n\nstring",
+          "Description": "Pfad, unter dem geschrieben werden soll\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -277,7 +285,7 @@
         {
           "Id": "fdae42f3ad7c490f8ba3c2000771ea0d",
           "Name": "text",
-          "Description": "Text content\n\nstring",
+          "Description": "Textinhalt\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -288,7 +296,7 @@
         {
           "Id": "c9f6781f3a7c47cd9a71b67d1d9f293b",
           "Name": "void",
-          "Description": "No output",
+          "Description": "Keine Ausgabe",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -297,7 +305,7 @@
       ],
       "FunctionSignature": "DSCore.IO.FileSystem.WriteText@string,string",
       "Replication": "Auto",
-      "Description": "Write the text content to a file specified by the path\n\nFileSystem.WriteText (filePath: string, text: string): void"
+      "Description": "Schreibt den Textinhalt in eine durch den Pfad angegebene Datei.\n\nFileSystem.WriteText (filePath: string, text: string): void"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -327,7 +335,7 @@
         {
           "Id": "6cf9b41c93104c3a93db1ed5b0d89a0b",
           "Name": "",
-          "Description": "Value of expression at line 1",
+          "Description": "Wert des Ausdrucks in Zeile 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -335,7 +343,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code.",
       "Code": "dir + \"\\\\\" + filename + \".py\";"
     },
     {
@@ -355,7 +363,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string",
+      "Description": "Erstellt eine Zeichenfolge.",
       "InputValue": "python"
     },
     {
@@ -366,7 +374,7 @@
         {
           "Id": "59c8c1aaadd34e108149f6cd46541f06",
           "Name": "list",
-          "Description": "List to filter.\n\nvar[]..[]",
+          "Description": "Zu filternde Liste\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -375,7 +383,7 @@
         {
           "Id": "78119ab8385243aea93fdd19b9ca7426",
           "Name": "mask",
-          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "Description": "Liste der booleschen Ausdrücke, die eine Maske darstellen\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -386,7 +394,7 @@
         {
           "Id": "9b458a4190d840ae80480df80887f57a",
           "Name": "in",
-          "Description": "Items whose mask index is true.",
+          "Description": "Elemente mit Maskenindex true",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -395,7 +403,7 @@
         {
           "Id": "90e31eca817944209721754446fb0a25",
           "Name": "out",
-          "Description": "Items whose mask index is false.",
+          "Description": "Elemente mit Maskenindex false",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -404,7 +412,7 @@
       ],
       "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
       "Replication": "Auto",
-      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+      "Description": "Filtert eine Sequenz durch Abrufen entsprechender Indizes in einer separaten Liste boolescher Werte.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -414,7 +422,7 @@
         {
           "Id": "c1a9c9cdb2ab48f89c6441bf9610b6df",
           "Name": "list",
-          "Description": "List to filter.\n\nvar[]..[]",
+          "Description": "Zu filternde Liste\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -423,7 +431,7 @@
         {
           "Id": "d90173ee20be4a40a648134e8f4eb4bf",
           "Name": "mask",
-          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "Description": "Liste der booleschen Ausdrücke, die eine Maske darstellen\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -434,7 +442,7 @@
         {
           "Id": "a5d94bdd116e449584692233d8e1699c",
           "Name": "in",
-          "Description": "Items whose mask index is true.",
+          "Description": "Elemente mit Maskenindex true",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -443,7 +451,7 @@
         {
           "Id": "769176fb3899440c87155ee1dd0bc927",
           "Name": "out",
-          "Description": "Items whose mask index is false.",
+          "Description": "Elemente mit Maskenindex false",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -452,7 +460,7 @@
       ],
       "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
       "Replication": "Auto",
-      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+      "Description": "Filtert eine Sequenz durch Abrufen entsprechender Indizes in einer separaten Liste boolescher Werte.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -462,7 +470,7 @@
         {
           "Id": "3f4d3c3f3b07406fb020e9bce583e458",
           "Name": "string",
-          "Description": "String to replace substrings in.\n\nstring",
+          "Description": "Zeichenfolge, die die zu ersetzenden Teilzeichenfolgen enthält.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -471,7 +479,7 @@
         {
           "Id": "b02a600fe03947a895c3dfd54997b1d2",
           "Name": "searchFor",
-          "Description": "Text to be replaced.\n\nstring",
+          "Description": "Der zu ersetzende Text\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -480,7 +488,7 @@
         {
           "Id": "08ef1fddd189450d842ebce0360baa95",
           "Name": "replaceWith",
-          "Description": "Text to replace with.\n\nstring",
+          "Description": "Als Ersatz einzufügender Text\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -491,7 +499,7 @@
         {
           "Id": "c2367f4b26914f5bb5bf4459b40bd5e5",
           "Name": "string",
-          "Description": "String with replacements made.",
+          "Description": "Zeichenfolge mit Ersetzungen",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -500,7 +508,7 @@
       ],
       "FunctionSignature": "DSCore.String.Replace@string,string,string",
       "Replication": "Auto",
-      "Description": "Replaces all occurrences of text in a string with other text.\n\nString.Replace (string: string, searchFor: string, replaceWith: string): string"
+      "Description": "Ersetzt alle Vorkommen des angegebenen Texts in einer Zeichenfolge durch anderen Text.\n\nString.Replace (string: string, searchFor: string, replaceWith: string): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -519,7 +527,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string",
+      "Description": "Erstellt eine Zeichenfolge.",
       "InputValue": "&gt;"
     },
     {
@@ -539,7 +547,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string",
+      "Description": "Erstellt eine Zeichenfolge.",
       "InputValue": ">"
     },
     {
@@ -559,7 +567,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string",
+      "Description": "Erstellt eine Zeichenfolge.",
       "InputValue": "<"
     },
     {
@@ -570,7 +578,7 @@
         {
           "Id": "12c00d0e62da42f390d25be32b47cc54",
           "Name": "string",
-          "Description": "String to replace substrings in.\n\nstring",
+          "Description": "Zeichenfolge, die die zu ersetzenden Teilzeichenfolgen enthält.\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -579,7 +587,7 @@
         {
           "Id": "46193b0c4fa54497a743a847d1bd2c27",
           "Name": "searchFor",
-          "Description": "Text to be replaced.\n\nstring",
+          "Description": "Der zu ersetzende Text\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -588,7 +596,7 @@
         {
           "Id": "32fe58793d6a4d308db18a67f02de571",
           "Name": "replaceWith",
-          "Description": "Text to replace with.\n\nstring",
+          "Description": "Als Ersatz einzufügender Text\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -599,7 +607,7 @@
         {
           "Id": "72aecc15b3d74b2d9fdf792b286ee9d6",
           "Name": "string",
-          "Description": "String with replacements made.",
+          "Description": "Zeichenfolge mit Ersetzungen",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -608,7 +616,7 @@
       ],
       "FunctionSignature": "DSCore.String.Replace@string,string,string",
       "Replication": "Auto",
-      "Description": "Replaces all occurrences of text in a string with other text.\n\nString.Replace (string: string, searchFor: string, replaceWith: string): string"
+      "Description": "Ersetzt alle Vorkommen des angegebenen Texts in einer Zeichenfolge durch anderen Text.\n\nString.Replace (string: string, searchFor: string, replaceWith: string): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -627,7 +635,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string",
+      "Description": "Erstellt eine Zeichenfolge.",
       "InputValue": "&lt;"
     },
     {
@@ -651,7 +659,7 @@
         {
           "Id": "286ba918f114488198b7684fe5b7c3d4",
           "Name": "Version",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -660,7 +668,7 @@
         {
           "Id": "e878d3cf18c4468eacb99b7dfea72fe8",
           "Name": "Name",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -669,7 +677,7 @@
         {
           "Id": "672c5c6d6e3140f7932a4086b9b034f4",
           "Name": "ID",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -678,7 +686,7 @@
         {
           "Id": "751015faa51e453783ef276706e49e9a",
           "Name": "Description",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -687,7 +695,7 @@
         {
           "Id": "9085893c293c4535b6dbb43464320b31",
           "Name": "Category",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -696,7 +704,7 @@
         {
           "Id": "17092446c5374a6ea3c176be9708fd52",
           "Name": "Inputs",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -705,7 +713,7 @@
         {
           "Id": "682cadd448084a758148f5dfdcbb1605",
           "Name": "InputDataTypes",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -714,7 +722,7 @@
         {
           "Id": "9b7cc31ae1c5415d9bc84830f6f8969d",
           "Name": "InputDefaultVals",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -723,7 +731,7 @@
         {
           "Id": "9c1e97a42e8f44b59ae8148c66b3e1bc",
           "Name": "Outputs",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -732,7 +740,7 @@
         {
           "Id": "ea0943c179eb40d99da4989129701ac0",
           "Name": "PythonScripts",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -741,7 +749,7 @@
         {
           "Id": "a0474e2b11254f0d924a75b619f5e86f",
           "Name": "NestedCustomNodes",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -750,7 +758,7 @@
         {
           "Id": "150004391cc94b328083fc166beeb017",
           "Name": "CustomNodesCount",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -759,7 +767,7 @@
         {
           "Id": "846629e318d14afea02a57cec08d5c17",
           "Name": "NestedBuiltinNodes",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -768,7 +776,7 @@
         {
           "Id": "fe0238de539c4a7c887f60596656d070",
           "Name": "BuiltinNodesCount",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -777,7 +785,7 @@
         {
           "Id": "d0f819fc381144c8926f9ac9ddbf03eb",
           "Name": "InputDescriptions",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -786,7 +794,7 @@
         {
           "Id": "4c2189c58b8347f5ba9e26dcc64089b1",
           "Name": "OutputDescriptions",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -795,7 +803,7 @@
         {
           "Id": "90badc07c3f34d55acd8b6ec5cb89173",
           "Name": "IsVisibleInLibrary",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -841,7 +849,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Applies a function over all elements of a list, generating a new list from the results"
+      "Description": "Wendet eine Funktion für alle Elemente einer Liste an, und erstellt aus den Ergebnissen eine neue Liste."
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSVarArgFunction, DynamoCore",
@@ -853,7 +861,7 @@
         {
           "Id": "93154e5816c04aa493c37c3ba4ce23d9",
           "Name": "separator",
-          "Description": "String to be inserted between joined strings.\n\nstring",
+          "Description": "Die zwischen den verbundenen Zeichenfolgen einzufügende Zeichenfolge\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -862,7 +870,7 @@
         {
           "Id": "0b8471065973448aa0ab636842773a94",
           "Name": "string0",
-          "Description": "Strings to be joined into a single string.\n\nstring[]",
+          "Description": "Die zu einer einzigen Zeichenfolge zu verbindenden Zeichenfolgen\n\nstring[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -873,7 +881,7 @@
         {
           "Id": "fb831e2b4f714c7db001c4fbf2ec413e",
           "Name": "string",
-          "Description": "A string made from the list of strings including the separator character.",
+          "Description": "Eine aus der Liste von Zeichenfolgen erstellte Zeichenfolge einschließlich Trennzeichen",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -881,7 +889,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Concatenates multiple strings into a single string, inserting the given separator between each joined string.\n\nString.Join (separator: string, strings: string[]): string"
+      "Description": "Verkettet mehrere Zeichenfolgen zu einer einzigen Zeichenfolge, und fügt dabei das angegebene Trennzeichen zwischen den einzelnen verbundenen Zeichenfolgen ein.\n\nString.Join (separator: string, strings: string[]): string"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
@@ -900,7 +908,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a string",
+      "Description": "Erstellt eine Zeichenfolge.",
       "InputValue": "\r\n\r\n##### NEXT PYTHON NODE #####\r\n\r\n"
     },
     {
@@ -911,7 +919,7 @@
         {
           "Id": "72018b70aadf4282b3035443cad78e35",
           "Name": "list",
-          "Description": "List to flatten.\n\nvar[]..[]",
+          "Description": "Zu vereinfachende Liste\n\nvar[]..[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -920,7 +928,7 @@
         {
           "Id": "9dfa2e9777344b889a5bc3148c053b8c",
           "Name": "amount",
-          "Description": "Layers of list nesting to remove (-1 will remove all list nestings)\n\nint\nDefault value : -1",
+          "Description": "Layer der zu entfernenden Listenverschachtelung (-1 entfernt alle Listenverschachtelungen)\n\nint\nVorgabewert : -1",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -931,7 +939,7 @@
         {
           "Id": "7430ec401e41443fb7e6b36b921aeae7",
           "Name": "list",
-          "Description": "Flattened list by amount",
+          "Description": "Vereinfachte Liste nach Betrag",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -940,7 +948,7 @@
       ],
       "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
       "Replication": "Auto",
-      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
+      "Description": "Vereinfacht eine verschachtelte Liste von Listen um eine bestimmte Anzahl von Ebenen.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -950,7 +958,7 @@
         {
           "Id": "f9d458732cc14d00960d6c6d223f5590",
           "Name": "directory",
-          "Description": "Directory to get contents of\n\nvar",
+          "Description": "Verzeichnis zum Abrufen des Inhalts\n\nvar",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -959,7 +967,7 @@
         {
           "Id": "54ca370548714aabb7ca163846008f96",
           "Name": "searchString",
-          "Description": "Search string used to filter results\n\nstring\nDefault value : \"*.*\"",
+          "Description": "Suchzeichenfolge zum Filtern von Ergebnissen\n\nstring\nVorgabewert : \"*.*\"",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -968,7 +976,7 @@
         {
           "Id": "c1976df22e5240d1a282e10ff52a8ec5",
           "Name": "includeSubdirectories",
-          "Description": "Set to true to include files and folders in subdirectories (recursive) or set to false to include results from top-level of given directory only.\n\nbool\nDefault value : false",
+          "Description": "Legen Sie diese Option auf True fest, um Dateien und Ordner in Unterverzeichnissen (rekursiv) einzubeziehen, oder legen Sie False fest, um Ergebnisse nur aus der obersten Ebene des angegebenen Verzeichnisses einzubeziehen.\n\nbool\nVorgabewert : false",
           "UsingDefaultValue": true,
           "Level": 2,
           "UseLevels": false,
@@ -979,7 +987,7 @@
         {
           "Id": "0055d8885ec74f409ea11766ecce58ce",
           "Name": "files",
-          "Description": "Resulting files from query",
+          "Description": "Aus Abfrage resultierende Dateien",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -988,7 +996,7 @@
         {
           "Id": "726889f2717a4182aa35b71b734de90c",
           "Name": "directories",
-          "Description": "Resulting directories from query",
+          "Description": "Aus Abfrage resultierende Verzeichnisse",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -997,7 +1005,7 @@
       ],
       "FunctionSignature": "DSCore.IO.FileSystem.GetDirectoryContents@var,string,bool",
       "Replication": "Auto",
-      "Description": "Will return a list of files and directories that are contained within a given directory. An optional searchString can be used to filter the results.\n\nFileSystem.GetDirectoryContents (directory: var, searchString: string = \"*.*\", includeSubdirectories: bool = false): var[]..[]"
+      "Description": "Gibt eine Liste mit Dateien und Verzeichnissen zurück, die sich in einem bestimmten Verzeichnis befinden. Mit einer optionalen searchString können Sie die Ergebnisse filtern.\n\nFileSystem.GetDirectoryContents (directory: var, searchString: string = \"*.*\", includeSubdirectories: bool = false): var[]..[]"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
@@ -1008,7 +1016,7 @@
         {
           "Id": "245c12a48cdd45d5bfe11a2f2a7f07aa",
           "Name": "",
-          "Description": "Value of expression at line 1",
+          "Description": "Wert des Ausdrucks in Zeile 1",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1016,7 +1024,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Allows for DesignScript code to be authored directly",
+      "Description": "Ermöglicht die direkte Erstellung von DesignScript-Code.",
       "Code": "\"*.py\";"
     },
     {
@@ -1027,7 +1035,7 @@
         {
           "Id": "204ab7f2a01c40c5a267210f7955d8ad",
           "Name": "path",
-          "Description": "File path to delete\n\nstring",
+          "Description": "Zu löschender Dateipfad\n\nstring",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1038,7 +1046,7 @@
         {
           "Id": "3c007113103f45a0b7247eaad84fa51f",
           "Name": "void",
-          "Description": "Node performs a task, doesn’t produce an output",
+          "Description": "Block führt eine Aufgabe aus, erzeugt keine Ausgabe",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1047,7 +1055,7 @@
       ],
       "FunctionSignature": "DSCore.IO.FileSystem.DeleteFile@string",
       "Replication": "Auto",
-      "Description": "Deletes the specified file.\n\nFileSystem.DeleteFile (path: string): void"
+      "Description": "Löscht die angegebene Datei.\n\nFileSystem.DeleteFile (path: string): void"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.DirectoryObject, CoreNodeModels",
@@ -1076,7 +1084,7 @@
         }
       ],
       "Replication": "Disabled",
-      "Description": "Creates a directory object from the given path"
+      "Description": "Erstellt ein Verzeichnisobjekt aus dem angegebenen Pfad"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
@@ -1099,7 +1107,7 @@
         {
           "Id": "9f3361fd33914323a1d63eb60539a492",
           "Name": "bool",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1139,7 +1147,7 @@
         {
           "Id": "e9475a4bf54140b6a44b5dd10f221a4e",
           "Name": "passThrough",
-          "Description": "return value",
+          "Description": "Rückgabewert",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1159,7 +1167,7 @@
         {
           "Id": "afb4783f52124ae8895c7c87a3802830",
           "Name": "string0",
-          "Description": "Strings to combine into a path\n\nstring[]",
+          "Description": "Zu einem Pfad zu kombinierende Zeichenfolgen\n\nstring[]",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1179,7 +1187,7 @@
         {
           "Id": "5b17df98ea814639a443324cd8c5b767",
           "Name": "string",
-          "Description": "Combined file path",
+          "Description": "Kombinierter Dateipfad",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -1187,7 +1195,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Combines multiple strings into a single file path.\n\nFileSystem.CombinePath (strings: string[]): string"
+      "Description": "Verbindet mehrere Zeichenfolgen zu einem einzelnen Dateipfad.\n\nFileSystem.CombinePath (strings: string[]): string"
     }
   ],
   "Connectors": [
@@ -1407,7 +1415,6 @@
       ]
     }
   ],
-  "EnableLegacyPolyCurveBehavior": true,
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -1426,7 +1433,7 @@
   ],
   "Author": "None provided",
   "Linting": {
-    "activeLinter": "None",
+    "activeLinter": "Keine",
     "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
     "warningCount": 0,
     "errorCount": 0
@@ -1437,12 +1444,12 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": false,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "3.3.0.6316",
+      "Version": "2.19.3.6394",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
-      "Name": "_Background Preview",
+      "Name": "_Hintergrundvorschau",
       "EyeX": -17.0,
       "EyeY": 24.0,
       "EyeZ": 50.0,
@@ -1462,7 +1469,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": -20.93341375986097,
+        "X": -20.933413759860969,
         "Y": -224.44348441741437
       },
       {
@@ -1472,7 +1479,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 706.8101713075188,
+        "X": 706.81017130751877,
         "Y": 225.76665746185392
       },
       {
@@ -1483,7 +1490,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 389.21017130751875,
-        "Y": 316.5941574618539
+        "Y": 316.59415746185391
       },
       {
         "Id": "759906393ae649c2975cf1b2197d38d8",
@@ -1513,7 +1520,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2184.6340160804175,
-        "Y": -78.42831163406856
+        "Y": -78.428311634068564
       },
       {
         "Id": "958473bbab2e4af4b9d05f27292dd57d",
@@ -1543,7 +1550,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": -18.76186353917501,
-        "Y": -64.66274548914348
+        "Y": -64.662745489143475
       },
       {
         "Id": "63d68cc54f9e4fae8a8d0555605771ce",
@@ -1553,7 +1560,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1762.1841570928236,
-        "Y": 368.7528609386379
+        "Y": 368.75286093863792
       },
       {
         "Id": "77871326461d4fffa996883d1702b788",
@@ -1573,7 +1580,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2096.5841570928237,
-        "Y": 505.7528609386379
+        "Y": 505.75286093863792
       },
       {
         "Id": "962c58ef8bb54bc6800bd8a2ad3390ef",
@@ -1583,7 +1590,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1762.1841570928236,
-        "Y": 551.7528609386378
+        "Y": 551.75286093863781
       },
       {
         "Id": "0abdb126358348b396738b41afcfccfd",
@@ -1593,7 +1600,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1762.1841570928236,
-        "Y": 698.7528609386379
+        "Y": 698.75286093863792
       },
       {
         "Id": "b8a0e29d13204cd39f43374d22fa9bc3",
@@ -1603,7 +1610,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2096.5841570928237,
-        "Y": 866.7528609386378
+        "Y": 866.75286093863781
       },
       {
         "Id": "d0e0a3f138ce4b128218d93176ee6ac4",
@@ -1613,7 +1620,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2430.1841570928236,
-        "Y": 683.7528609386379
+        "Y": 683.75286093863792
       },
       {
         "Id": "298292f0a6894d1d8f7ceb72772d0cfa",
@@ -1623,7 +1630,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2096.5841570928237,
-        "Y": 718.7528609386378
+        "Y": 718.75286093863781
       },
       {
         "Id": "3ea46fc675b34c6292a29de12738a4f5",
@@ -1643,7 +1650,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 2828.5841570928237,
-        "Y": 800.7528609386379
+        "Y": 800.75286093863792
       },
       {
         "Id": "dc376d56c8e64f8abf42603b0183823d",
@@ -1673,7 +1680,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 3063.784157092824,
-        "Y": 800.7528609386379
+        "Y": 800.75286093863792
       },
       {
         "Id": "65cddaf1212c401aa997132d96c25871",
@@ -1693,7 +1700,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 743.4891317830851,
-        "Y": -77.06245700047202
+        "Y": -77.062457000472023
       },
       {
         "Id": "92f004606810410cb12deeb82794e5f9",
@@ -1702,7 +1709,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 1481.889131783085,
+        "X": 1481.8891317830851,
         "Y": -167.889957000472
       },
       {
@@ -1723,7 +1730,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 1469.3841570928237,
-        "Y": 581.6666109386377
+        "Y": 581.66661093863775
       },
       {
         "Id": "ce729c4859504a3ebac8a77404f79b31",
@@ -1742,7 +1749,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 385.8891317830851,
+        "X": 385.88913178308508,
         "Y": -213.389957000472
       }
     ],
@@ -1759,14 +1766,14 @@
           "653011cc2149490ab0d33ebbf7e5828f"
         ],
         "HasNestedGroups": false,
-        "Left": -30.93341375986097,
+        "Left": -30.933413759860969,
         "Top": -290.44348441741437,
-        "Width": 346.4,
-        "Height": 357.5807389282709,
+        "Width": 379.0,
+        "Height": 357.78073892827092,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -224.44348441741437,
-        "InitialHeight": 240.518269183945,
+        "InitialHeight": 304.78073892827092,
         "TextblockHeight": 56.0,
         "Background": "#FF848484"
       },
@@ -1785,12 +1792,12 @@
         "HasNestedGroups": false,
         "Left": 379.21017130751875,
         "Top": 102.7666574618539,
-        "Width": 658.4000000000001,
-        "Height": 345.62750000000005,
+        "Width": 657.60000000000014,
+        "Height": 345.8275,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 168.7666574618539,
-        "InitialHeight": 248.9025381431523,
+        "InitialHeight": 292.8275,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -1821,12 +1828,12 @@
         "HasNestedGroups": false,
         "Left": 1082.5841570928237,
         "Top": 103.20973593863766,
-        "Width": 2184.8,
-        "Height": 1151.143125,
+        "Width": 2186.2000000000003,
+        "Height": 1150.5431250000001,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": 169.20973593863766,
-        "InitialHeight": 886.6047922865167,
+        "InitialHeight": 989.54312500000026,
         "TextblockHeight": 56.0,
         "Background": "#FFC1D676"
       },
@@ -1848,12 +1855,12 @@
         "HasNestedGroups": false,
         "Left": 2174.6340160804175,
         "Top": -373.82831163406854,
-        "Width": 1480.0,
-        "Height": 427.2,
+        "Width": 1479.4,
+        "Height": 427.4,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -307.82831163406854,
-        "InitialHeight": 323.2458656489128,
+        "InitialHeight": 374.4,
         "TextblockHeight": 56.0,
         "Background": "#FF48B9FF"
       },
@@ -1873,14 +1880,14 @@
           "97427638fadb49bbb243c62496da895a"
         ],
         "HasNestedGroups": false,
-        "Left": 375.8891317830851,
+        "Left": 375.88913178308508,
         "Top": -290.889957000472,
-        "Width": 1729.6000000000001,
-        "Height": 345.6275,
+        "Width": 1728.6000000000001,
+        "Height": 345.8275,
         "FontSize": 30.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
         "InitialTop": -224.889957000472,
-        "InitialHeight": 300.664696156393,
+        "InitialHeight": 292.8275,
         "TextblockHeight": 56.0,
         "Background": "#FFBB87C6"
       },
@@ -1896,14 +1903,14 @@
         ],
         "HasNestedGroups": false,
         "Left": -13.265602258507329,
-        "Top": -696.9994360284443,
+        "Top": -697.99943602844428,
         "Width": 316.0,
-        "Height": 352.2,
+        "Height": 353.0,
         "FontSize": 48.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -494.9994360284443,
+        "InitialTop": -494.99943602844428,
         "InitialHeight": 145.0,
-        "TextblockHeight": 192.0,
+        "TextblockHeight": 193.0,
         "Background": "#FF848484"
       },
       {
@@ -1936,7 +1943,7 @@
         "Nodes": [],
         "HasNestedGroups": false,
         "Left": -3.2656022585073288,
-        "Top": -486.9994360284443,
+        "Top": -486.99943602844428,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -1956,7 +1963,7 @@
         "Nodes": [],
         "HasNestedGroups": false,
         "Left": 2430.1841570928236,
-        "Top": 629.9528609386379,
+        "Top": 629.95286093863785,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -1987,8 +1994,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 35.080349833199975,
-    "Y": 241.9053205798929,
-    "Zoom": 0.24269093858648866
+    "X": 89.620160832437023,
+    "Y": 514.88190478813442,
+    "Zoom": 1.7892774057085346
   }
 }
